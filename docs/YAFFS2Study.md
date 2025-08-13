@@ -1087,38 +1087,23 @@ Debug :
 I’ve proceeded a complex scenario in which I create, move, delete
 truncate file and directories :
 
-> \[ 14.391648\] ====\[ Mounting /dev/mtdblock1 on /mnt/yaffs \]====
-
-> \[ 14.405895\] ====\[ Dumping initial on /dev/mtd1 \]====
-
-> \[ 15.134698\] ====\[ Creating /file1.txt in / \]====
-
-> \[ 20.917990\] ====\[ Creating chained directories /dir1/dir2/dir3
-> \]====
-
-> \[ 26.708773\] ====\[ Creating link /dir1/dir2/dir3/link1 -\>
-> ../../../test1.txt \]====
-
-> \[ 32.508219\] ====\[ Creating named pipe /dir1/dir2/named_pipe \]====
-
-> \[ 38.318230\] ====\[ Creating block device /dir1/block_device \]====
-
-> \[ 44.111376\] ====\[ Creating unix socket /dir6/aSocket.sock \]====
-
-> \[ 49.943995\] ====\[ Moving directory /dir1/dir4/dir5 in /dir1/dir2
-> \]====
-
-> \[ 55.739753\] ====\[ Deleting /dir1/dir2/dir5 \]====
-
-> \[ 61.520354\] ====\[ Renaming /dir1/dir4 in /dir1/dir41 \]====
-
-> \[ 67.313454\] ====\[ Creating /file2.txt in /dir1/dir41 \]====
-
-> \[ 73.114283\] ====\[ Creating /dir1/lorem.txt \]====
-
-> \[ 78.919710\] ====\[ Truncating /dir1/lorem.txt \]====
-
-> \[ 84.725678\] ====\[ Fin \]====
+```bash
+[ 14.391648] ====[ Mounting /dev/mtdblock1 on /mnt/yaffs ]====
+[ 14.405895] ====[ Dumping initial on /dev/mtd1 ]====
+[ 15.134698] ====[ Creating /file1.txt in / ]====
+[ 20.917990] ====[ Creating chained directories /dir1/dir2/dir3 ]====
+[ 26.708773] ====[ Creating link /dir1/dir2/dir3/link1 -> ../../../test1.txt ]====
+[ 32.508219] ====[ Creating named pipe /dir1/dir2/named_pipe ]====
+[ 38.318230] ====[ Creating block device /dir1/block_device ]====
+[ 44.111376] ====[ Creating unix socket /dir6/aSocket.sock ]====
+[ 49.943995] ====[ Moving directory /dir1/dir4/dir5 in /dir1/dir2 ]====
+[ 55.739753] ====[ Deleting /dir1/dir2/dir5 ]====
+[ 61.520354] ====[ Renaming /dir1/dir4 in /dir1/dir41 ]====
+[ 67.313454] ====[ Creating /file2.txt in /dir1/dir41 ]====
+[ 73.114283] ====[ Creating /dir1/lorem.txt ]====
+[ 78.919710] ====[ Truncating /dir1/lorem.txt ]====
+[ 84.725678] ====[ Fin ]====
+```
 
 The purpose is to retrieve everything before deletion, rename or
 truncation.
