@@ -656,7 +656,6 @@ directory / (object_id=1).
   </thead>
   <tbody>
 
-    <!-- Chunk #1 -->
     <tr>
       <td rowspan="16">Chunk #1<br>OBJ = 257<br>CHUNK_ID=0</td>
       <td rowspan="11">Data</td>
@@ -705,7 +704,6 @@ directory / (object_id=1).
     <tr><td>chunk_id \x01 \x00 \x00 \x00</td><td>0x0 0000001 : data chunk<br>chunk_id=1</td></tr>
     <tr><td>n_bytes \x05 \x00</td><td>0x0005 → 5 bytes</td></tr>
 
-    <!-- Chunk #3 -->
     <tr>
       <td rowspan="16">Chunk #3<br>OBJ = 257<br>CHUNK_ID=0</td>
       <td rowspan="11">Data</td>
@@ -733,7 +731,6 @@ directory / (object_id=1).
     <tr><td>chunk_id \x01 \x00 \x00 \x80</td><td>0x8 0000001 : header chunk<br>chunk_id=1</td></tr>
     <tr><td>n_bytes \x50 \x00</td><td>0x0005 → 5 bytes</td></tr>
 
-    <!-- Chunk #4 -->
     <tr>
       <td rowspan="16">Chunk #4<br>OBJ = 1<br>CHUNK_ID=0</td>
       <td rowspan="11">Data</td>
@@ -763,6 +760,7 @@ directory / (object_id=1).
 
   </tbody>
 </table>
+
 
 Resume:
 
