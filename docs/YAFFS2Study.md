@@ -828,13 +828,13 @@ implies chunk_id=0<br />
 <td></td>
 </tr>
 <tr class="even">
-<td><p>Chunk #3</p>
+<td rowspan=16><p>Chunk #3</p>
 <p>OBJ = 257</p>
 <p>CHUNK_ID=0</p></td>
-<td>Data</td>
+<td rowspan=11>Data</td>
 <td>name test1.txt ...</td>
 <td></td>
-<td>Update « test1.txt » metadata</td>
+<td rowspan=16>Update « test1.txt » metadata</td>
 </tr>
 <tr class="odd">
 <td>yst_mode \xa4 \x81 \x00 \x00</td>
@@ -912,7 +912,7 @@ implies chunk_id=0<br />
 <td></td>
 </tr>
 <tr class="odd">
-<td>OOB</td>
+<td rowspan=5 >OOB</td>
 <td>blockstate \xff</td>
 <td>→ Good Chunk</td>
 <td></td>
