@@ -1305,72 +1305,40 @@ Here is the program help
 usage: yaffs2_parser.py \[-h\] --image IMAGE [--obj_ids OBJ_IDS [OBJ_IDS …]]
                                              [--obj_id_from OBJ_ID_FROM]
                                              [--obj_id_to OBJ_ID_TO]
-
-\[--snapshot SNAPSHOT\]
-
-\[--name NAME\]
-
-\[--versions VERSIONS \[VERSIONS …\]\]
-
-\[--version_from VERSION_FROM\]
-
-\[--version_to VERSION_TO\]
-
-\[--outdir OUTDIR\]
-
-\[--debug {0,1,2}\]
-
-\[--last_only\]
-
-\[--wide\]
-
-\[--autodetect\]
-
-\[--autodetect_only\]
-
-\[--pagesize PAGESIZE\]
-
-\[--oobsize OOBSIZE\]
-
-\[--endianness {big,little}\]
-
-\[--restore_owner\]
-
-\[--restore_right\]
-
-\[--remove_path REMOVE_PATH\]
+                                             [--snapshot SNAPSHOT]
+                                             [--name NAME]
+                                             [--versions VERSIONS [VERSIONS …]]
+                                             [--version_from VERSION_FROM]
+                                             [--version_to VERSION_TO]
+                                             [--outdir OUTDIR]
+                                             [--debug {0,1,2}]
+                                             [--last_only]
+                                             [--wide]
+                                             [--autodetect]
+                                             [--autodetect_only]
+                                             [--pagesize PAGESIZE]
+                                             [--oobsize OOBSIZE]
+                                             [--endianness {big,little}]
+                                             [--restore_owner]
+                                             [--restore_right]
+                                             [--remove_path REMOVE_PATH]
 
 This program is part of my Forensic project
 
-> It tries to forensic a YAFFS2 partition and tries to restore as much
-> as possible
+It tries to forensic a YAFFS2 partition and tries to restore as much as possible
+  --> even deleted and orphans (data chunk without metadata)
+*** If you want to restore blockdevice / chardevice or --restore_owner, run me as root ***
 
-> --\> even deleted and orphans (data chunk without metadata)
-
-> \*\*\* If you want to restore blockdevice / chardevice or
-> --restore_owner, run me as root \*\*\*
-
-> options:
-
-> -h, --help show this help message and exit
-
-> --image IMAGE YAFFS2 image to process/analyze
-
-> --obj_ids OBJ_IDS \[OBJ_IDS ...\]
-
-> Object_id (list) to retain
-
-> --obj_id_from OBJ_ID_FROM
-
-> Minimum Object_id to retain
-
-> --obj_id_to OBJ_ID_TO
-
-> Maximum Object_id to retain
-
-> --snapshot SNAPSHOT Reconstruct the NAND state at this timestamp
-> (format 'YYYY-MM-DD hh:mm:ss')
-
+options:
+ -h, --help            show this help message and exit
+ --image IMAGE         YAFFS2 image to process/analyze
+ --obj_ids OBJ_IDS [OBJ_IDS ...]
+                       Object_id (list) to retain
+ --obj_id_from OBJ_ID_FROM
+                       Minimum Object_id to retain
+ --obj_id_to OBJ_ID_TO
+                       Maximum Object_id to retain
+ --snapshot SNAPSHOT   Reconstruct the NAND state at this timestamp (format 'YYYY-MM-DD hh:mm:ss')
 > --name NAME Retain only the file specified
 
 > --versions VERSIONS \[VERSIONS ...\]
