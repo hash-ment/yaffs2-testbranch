@@ -1301,49 +1301,49 @@ Furthermore, it needs to have the ability to manage :
 - several debug levels (0: normal, 1:base, 2:verbose)
 
 Here is the program help
+```bash
+usage: yaffs2_parser.py \[-h\] --image IMAGE \[--obj_ids OBJ_IDS
+\[OBJ_IDS …\]\]
 
-> usage: yaffs2_parser.py \[-h\] --image IMAGE \[--obj_ids OBJ_IDS
-> \[OBJ_IDS …\]\]
+\[--obj_id_from OBJ_ID_FROM\]
 
-> \[--obj_id_from OBJ_ID_FROM\]
+\[--obj_id_to OBJ_ID_TO\]
 
-> \[--obj_id_to OBJ_ID_TO\]
+\[--snapshot SNAPSHOT\]
 
-> \[--snapshot SNAPSHOT\]
+\[--name NAME\]
 
-> \[--name NAME\]
+\[--versions VERSIONS \[VERSIONS …\]\]
 
-> \[--versions VERSIONS \[VERSIONS …\]\]
+\[--version_from VERSION_FROM\]
 
-> \[--version_from VERSION_FROM\]
+\[--version_to VERSION_TO\]
 
-> \[--version_to VERSION_TO\]
+\[--outdir OUTDIR\]
 
-> \[--outdir OUTDIR\]
+\[--debug {0,1,2}\]
 
-> \[--debug {0,1,2}\]
+\[--last_only\]
 
-> \[--last_only\]
+\[--wide\]
 
-> \[--wide\]
+\[--autodetect\]
 
-> \[--autodetect\]
+\[--autodetect_only\]
 
-> \[--autodetect_only\]
+\[--pagesize PAGESIZE\]
 
-> \[--pagesize PAGESIZE\]
+\[--oobsize OOBSIZE\]
 
-> \[--oobsize OOBSIZE\]
+\[--endianness {big,little}\]
 
-> \[--endianness {big,little}\]
+\[--restore_owner\]
 
-> \[--restore_owner\]
+\[--restore_right\]
 
-> \[--restore_right\]
+\[--remove_path REMOVE_PATH\]
 
-> \[--remove_path REMOVE_PATH\]
-
-> This program is part of my Forensic project
+This program is part of my Forensic project
 
 > It tries to forensic a YAFFS2 partition and tries to restore as much
 > as possible
@@ -1484,6 +1484,7 @@ Here is the program help
 
 > -\> do not forget to store output to a debug file or pipe to 'less' or
 > 'more'
+```
 
 ## <span id="anchor-37"></span>List all objects (even renamed, truncated, deleted)
 
