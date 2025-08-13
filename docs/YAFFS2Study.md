@@ -1220,11 +1220,11 @@ It shows all as expected :
 Moreover, if we activate --wide parameter, we can have more detailed
 information :
 
-> \$ python yaffs2_parser.py --image snapshot_12_truncate_lorem.bin
-> --autodetect **--wide**
+```bash
+$ python yaffs2_parser.py --image snapshot_12_truncate_lorem.bin --autodetect --wide
+```
 
-> <img src="images/Pictures/10000000000007DC000002DDA8B40F23.jpg"
-> style="width:16.984cm;height:6.138cm" />
+<img src="images/Pictures/10000000000007DC000002DDA8B40F23.jpg" style="width:16.984cm;height:6.138cm" />
 
 ***Note \#1*** : All timestamps were there, and as I put 5 seconds
 between each filesystem operation, we can see clearly different ctimes.
@@ -1378,531 +1378,202 @@ mode.
 The program will show detailed information about the auto-detect
 algorithm :
 
-> Auto-detecting NAND parameters ...
+```bash
+Auto-detecting NAND parameters ...
+   testing format 2048+64 in little-endian -> Score : 125
+   testing format 2048+64 in big-endian -> Score : 0
+   testing format 4096+128 in little-endian -> Score : 21
+   testing format 4096+128 in big-endian -> Score : 0
+   testing format 512+16 in little-endian -> Score : 39
+   testing format 512+16 in big-endian -> Score : 0
+   testing format 8192+224 in little-endian -> Score : 1
+   testing format 8192+224 in big-endian -> Score : 0
+   testing format 16384+448 in little-endian -> Score : 1
+   testing format 16384+448 in big-endian -> Score : 0
+==> Best format detected : 2048 / 64 in little-endian (score 125)
 
-> testing format 2048+64 in little-endian -\> Score : 125
-
-> testing format 2048+64 in big-endian -\> Score : 0
-
-> testing format 4096+128 in little-endian -\> Score : 21
-
-> testing format 4096+128 in big-endian -\> Score : 0
-
-> testing format 512+16 in little-endian -\> Score : 39
-
-> testing format 512+16 in big-endian -\> Score : 0
-
-> testing format 8192+224 in little-endian -\> Score : 1
-
-> testing format 8192+224 in big-endian -\> Score : 0
-
-> testing format 16384+448 in little-endian -\> Score : 1
-
-> testing format 16384+448 in big-endian -\> Score : 0
-
-> ==\> Best format detected : 2048 / 64 in little-endian (score 125)
-
-> Processing image snapshot_12_truncate_lorem.bin with pagesize 2048 and
-> oobsize 64 in little-endian ...
+Processing image snapshot_12_truncate_lorem.bin with pagesize 2048 and oobsize 64 in little-endian ...
+```
 
 ### <span id="anchor-52"></span>Chunks
 
 Every chunk was displayed as this :
 
-> =====================================================================================================================================
-
-> **CHUNK \#00000000** \|\| **Object type YAFFS_OBJECT_TYPE_FILE ( 1)**
-> \|\|
-
-> **GOOD Chunk** ++================================================++
-> GOOD Chunk
-
-> ---\[ data part \]--- 00000000 01 00 00 00 01 00 00 00 ff ff 74 65 73
-> 74 31 2e \|..........test1.\|
-
-> size: 2048 bytes 00000010 74 78 74 00 00 00 00 00 00 00 00 00 00 00 00
-> 00 \|txt.............\|
-
-> 00000020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000040 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000050 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000060 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000070 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000080 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000090 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 000000a0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 000000b0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 000000c0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 000000d0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 000000e0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 000000f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000100 00 00 00 00 00 00 00 00 00 00 ff ff a4 81 00 00
-> \|................\|
-
-> 00000110 00 00 00 00 00 00 00 00 d4 9a 41 68 d4 9a 41 68
-> \|..........Ah..Ah\|
-
-> 00000120 d4 9a 41 68 00 00 00 00 ff ff ff ff ff ff ff ff
-> \|..Ah............\|
-
-> 00000130 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000140 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000150 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000160 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000170 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000180 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000190 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000001a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000001b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000001c0 ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00
-> \|................\|
-
-> 000001d0 d4 9a 41 68 00 00 00 00 d4 9a 41 68 00 00 00 00
-> \|..Ah......Ah....\|
-
-> 000001e0 d4 9a 41 68 00 00 00 00 00 00 00 00 ff ff ff ff
-> \|..Ah............\|
-
-> 000001f0 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000200 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000210 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000220 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000230 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000240 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000250 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000260 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000270 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000280 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000290 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000002a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000002b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000002c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000002d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000002e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000002f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000300 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000310 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000320 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000330 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000340 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000350 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000360 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000370 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000380 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000390 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000003a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000003b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000003c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000003d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000003e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000003f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000400 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000410 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000420 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000430 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000440 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000450 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000460 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000470 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000480 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000490 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000004a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000004b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000004c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000004d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000004e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000004f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000500 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000510 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000520 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000530 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000540 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000550 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000560 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000570 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000580 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000590 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000005a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000005b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000005c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000005d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000005e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000005f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000600 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000610 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000620 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000630 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000640 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000650 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000660 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000670 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000680 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000690 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000006a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000006b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000006c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000006d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000006e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000006f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000700 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000710 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000720 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000730 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000740 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000750 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000760 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000770 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000780 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000790 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000007a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000007b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000007c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000007d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000007e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000007f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> ........................\[ Analyze \]........................
-
-> junk0 (0, 10) -\> \x01 \x00 \x00 \x00 \x01 \x00 \x00 \x00 \xff \xff
-
-> name (10, 254) -\> \x74 \x65 \x73 \x74 \x31 \x2e \x74 \x78 \x74 \x00
-> \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00
-> \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00
-> \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00
-> \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00
-> \x00 \x00 \x00 \x00 \x00 \x
-
-> junk1 (264, 4) -\> \x00 \x00 \xff \xff
-
-> yst_mode (268, 4) -\> \xa4 \x81 \x00 \x00
-
-> yst_uid (272, 4) -\> \x00 \x00 \x00 \x00
-
-> yst_gid (276, 4) -\> \x00 \x00 \x00 \x00
-
-> yst_atime (280, 4) -\> \xd4 \x9a \x41 \x68
-
-> yst_mtime (284, 4) -\> \xd4 \x9a \x41 \x68
-
-> yst_ctime (288, 4) -\> \xd4 \x9a \x41 \x68
-
-> file_size_low (292, 4) -\> \x00 \x00 \x00 \x00
-
-> equiv_id (296, 4) -\> \xff \xff \xff \xff
-
-> alias (300, 160) -\> \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff
-> \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff
-> \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff
-> \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff
-> \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff
-> \xff \xff \xff \xff \xff \\
-
-> yst_rdev (460, 4) -\> \x00 \x00 \x00 \x00
-
-> win_ctime_1 (464, 4) -\> \xd4 \x9a \x41 \x68
-
-> win_ctime_2 (468, 4) -\> \x00 \x00 \x00 \x00
-
-> win_atime_1 (472, 4) -\> \xd4 \x9a \x41 \x68
-
-> win_atime_2 (476, 4) -\> \x00 \x00 \x00 \x00
-
-> win_mtime_1 (480, 4) -\> \xd4 \x9a \x41 \x68
-
-> win_mtime_2 (484, 4) -\> \x00 \x00 \x00 \x00
-
-> inband_shad_obj_id (488, 4) -\> \x00 \x00 \x00 \x00
-
-> inband_is_shrink (492, 4) -\> \xff \xff \xff \xff
-
-> file_size_high (496, 4) -\> \x00 \x00 \x00 \x00
-
-> reserved (500, 1) -\> \xff
-
-> shadows_obj (501, 4) -\> \xff \xff \xff \x00
-
-> is_shrink (505, 4) -\> \x00 \x00 \x00 \x00
-
-> result = {'file_size': 0, 'junk0':
-> b'\x01\x00\x00\x00\x01\x00\x00\x00\xff\xff', 'name': 'test1.txt',
-> 'junk1': 4294901760, 'yst_mode': 33188, 'yst_uid': 0, 'yst_gid': 0,
-> 'yst_atime': 1749129940, 'yst_mtime': 1749129940, 'yst_ctime':
-> 1749129940, 'file_size_low': 0, 'equiv_id': 4294967295, 'alias': '',
-> 'yst_rdev': 0, 'win_ctime_1': 1749129940, 'win_ctime_2': 0,
-> 'win_atime_1': 1749129940, 'win_atime_2': 0, 'win_mtime_1': 17491}
-
-> +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-
-> +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-
-> ---\[ oob part \]--- 00000800 ff ff 01 10 00 00 01 01 00 10 01 00 00
-> 80 00 00 \|................\|
-
-> size: 64 bytes 00000810 00 00 2a 38 a2 11 04 00 00 00 fb ff ff ff ff
-> ff \|..\*8............\|
-
-> 00000820 ff ff ff ff ff ff ff ff c3 ff 03 aa 5a 57 ff ff
-> \|............ZW..\|
-
-> 00000830 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> ........................\[ Analyze \]........................
-
-> blockstate (1, 1) -\> \xff
-
-> sequence_number (2, 4) -\> \x01 \x10 \x00 \x00
-
-> object_id (6, 4) -\> \x01 \x01 \x00 \x10
-
-> chunk_id (10, 4) -\> \x01 \x00 \x00 \x80
-
-> n_bytes (14, 2) -\> \x00 \x00
-
-> result = {'obj_type': 1, 'parent_obj_id': 1, 'has_packed_data': True,
-> 'blockstate': 255, 'sequence_number': 4097, 'object_id': 257,
-> 'chunk_id': 0, 'n_bytes': 0, 'obj_type_name':
-> 'YAFFS_OBJECT_TYPE_FILE', 'bs_signif': 'GOOD Chunk', 'file_size': 0}
+```bash
+=====================================================================================================================================
+CHUNK #00000000         ||    Object type YAFFS_OBJECT_TYPE_FILE ( 1)     ||
+GOOD Chunk              ++================================================++        GOOD Chunk
+
+---[ data part ]--- 00000000 01 00 00 00 01 00 00 00 ff ff 74 65 73 74 31 2e |..........test1.|
+size: 2048 bytes    00000010 74 78 74 00 00 00 00 00 00 00 00 00 00 00 00 00 |txt.............|
+                    00000020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    00000030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    00000040 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    00000050 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    00000060 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    00000070 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    00000080 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    00000090 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    000000a0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    000000b0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    000000c0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    000000d0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    000000e0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    000000f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                    00000100 00 00 00 00 00 00 00 00 00 00 ff ff a4 81 00 00 |................|
+                    00000110 00 00 00 00 00 00 00 00 d4 9a 41 68 d4 9a 41 68 |..........Ah..Ah|
+                    00000120 d4 9a 41 68 00 00 00 00 ff ff ff ff ff ff ff ff |..Ah............|
+                    00000130 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000140 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000150 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000160 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000170 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000180 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000190 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000001a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000001b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000001c0 ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00 |................|
+                    000001d0 d4 9a 41 68 00 00 00 00 d4 9a 41 68 00 00 00 00 |..Ah......Ah....|
+                    000001e0 d4 9a 41 68 00 00 00 00 00 00 00 00 ff ff ff ff |..Ah............|
+                    000001f0 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 |................|
+                    00000200 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000210 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000220 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000230 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000240 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000250 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000260 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000270 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000280 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000290 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000002a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000002b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000002c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000002d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000002e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000002f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000300 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000310 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000320 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000330 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000340 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000350 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000360 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000370 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000380 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000390 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000003a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000003b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000003c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000003d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000003e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000003f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000400 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000410 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000420 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000430 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000440 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000450 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000460 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000470 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000480 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000490 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000004a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000004b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000004c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000004d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000004e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000004f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000500 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000510 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000520 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000530 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000540 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000550 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000560 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000570 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000580 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000590 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000005a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000005b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000005c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000005d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000005e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000005f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000600 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000610 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000620 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000630 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000640 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000650 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000660 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000670 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000680 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000690 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000006a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000006b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000006c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000006d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000006e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000006f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000700 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000710 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000720 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000730 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000740 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000750 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000760 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000770 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000780 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    00000790 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000007a0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000007b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000007c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000007d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000007e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                    000007f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                             ........................[ Analyze ]........................
+                             junk0 (0, 10) -> x01 x00 x00 x00 x01 x00 x00 x00 xff xff
+                             name (10, 254) -> x74 x65 x73 x74 x31 x2e x74 x78 x74 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x
+                             junk1 (264, 4) -> x00 x00 xff xff
+                             yst_mode (268, 4) -> xa4 x81 x00 x00
+                             yst_uid (272, 4) -> x00 x00 x00 x00
+                             yst_gid (276, 4) -> x00 x00 x00 x00
+                             yst_atime (280, 4) -> xd4 x9a x41 x68
+                             yst_mtime (284, 4) -> xd4 x9a x41 x68
+                             yst_ctime (288, 4) -> xd4 x9a x41 x68
+                             file_size_low (292, 4) -> x00 x00 x00 x00
+                             equiv_id (296, 4) -> xff xff xff xff
+                             alias (300, 160) -> xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff 
+                             yst_rdev (460, 4) -> x00 x00 x00 x00
+                             win_ctime_1 (464, 4) -> xd4 x9a x41 x68
+                             win_ctime_2 (468, 4) -> x00 x00 x00 x00
+                             win_atime_1 (472, 4) -> xd4 x9a x41 x68
+                             win_atime_2 (476, 4) -> x00 x00 x00 x00
+                             win_mtime_1 (480, 4) -> xd4 x9a x41 x68
+                             win_mtime_2 (484, 4) -> x00 x00 x00 x00
+                             inband_shad_obj_id (488, 4) -> x00 x00 x00 x00
+                             inband_is_shrink (492, 4) -> xff xff xff xff
+                             file_size_high (496, 4) -> x00 x00 x00 x00
+                             reserved (500, 1) -> xff
+                             shadows_obj (501, 4) -> xff xff xff x00
+                             is_shrink (505, 4) -> x00 x00 x00 x00
+result = {'file_size': 0, 'junk0': b'x01x00x00x00x01x00x00x00xffxff', 'name': 'test1.txt', 'junk1': 4294901760, 'yst_mode': 33188, 'yst_uid': 0, 'yst_gid': 0, 'yst_atime': 1749129940, 'yst_mtime': 1749129940, 'yst_ctime': 1749129940, 'file_size_low': 0, 'equiv_id': 4294967295, 'alias': '', 'yst_rdev': 0, 'win_ctime_1': 1749129940, 'win_ctime_2': 0, 'win_atime_1': 1749129940, 'win_atime_2': 0, 'win_mtime_1': 17491}
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+---[ oob part ]---  00000800 ff ff 01 10 00 00 01 01 00 10 01 00 00 80 00 00 |................|
+size: 64 bytes      00000810 00 00 2a 38 a2 11 04 00 00 00 fb ff ff ff ff ff |..*8............|
+                    00000820 ff ff ff ff ff ff ff ff c3 ff 03 aa 5a 57 ff ff |............ZW..|
+                    00000830 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                             ........................[ Analyze ]........................
+                             blockstate (1, 1) -> xff
+                             sequence_number (2, 4) -> x01 x10 x00 x00
+                             object_id (6, 4) -> x01 x01 x00 x10
+                             chunk_id (10, 4) -> x01 x00 x00 x80
+                             n_bytes (14, 2) -> x00 x00
+result = {'obj_type': 1, 'parent_obj_id': 1, 'has_packed_data': True, 'blockstate': 255, 'sequence_number': 4097, 'object_id': 257, 'chunk_id': 0, 'n_bytes': 0, 'obj_type_name': 'YAFFS_OBJECT_TYPE_FILE', 'bs_signif': 'GOOD Chunk', 'file_size': 0}
+```
 
 **CHUNK \#00000000** : Chunk Number (be careful this is not chunk_id
 which is a field present in the oob Part)
