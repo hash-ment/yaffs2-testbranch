@@ -655,15 +655,15 @@ directory / (object_id=1).
 <td>Description</td>
 </tr>
 <tr class="even">
-<td><p>Chunk #1</p>
+<td rowspan=16><p>Chunk #1</p>
 <p>OBJ = 257</p>
 <p>CHUNK_ID=0</p></td>
 <td>Data</td>
 <td>name test1.txt ...</td>
 <td></td>
-<td>File « test1.txt » creation</td>
+<td rowspan=16>File « test1.txt » creation</td>
 </tr>
-<tr rowspan=16 class="odd">
+<tr class="odd">
 <td>yst_mode \xa4 \x81 \x00 \x00</td>
 <td>0x<strong>8</strong>1a4 :<br />
 0x<strong>8</strong> → it’s a file<br />
