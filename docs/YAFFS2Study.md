@@ -658,7 +658,7 @@ directory / (object_id=1).
 <td rowspan=16><p>Chunk #1</p>
 <p>OBJ = 257</p>
 <p>CHUNK_ID=0</p></td>
-<td>Data</td>
+<td rowspan=11>Data</td>
 <td>name test1.txt ...</td>
 <td></td>
 <td rowspan=16>File « test1.txt » creation</td>
@@ -739,7 +739,7 @@ directory / (object_id=1).
 <td></td>
 </tr>
 <tr class="odd">
-<td>OOB</td>
+<td rowspan=5 >OOB</td>
 <td>blockstate \xff</td>
 <td>→ Good Chunk</td>
 <td></td>
@@ -780,16 +780,16 @@ implies chunk_id=0<br />
 <td></td>
 </tr>
 <tr class="even">
-<td><p>Chunk #2</p>
+<td rowspan=6><p>Chunk #2</p>
 <p>OBJ = 257</p>
 <p>CHUNK_ID=1</p></td>
 <td>Data</td>
 <td>test1\x00\x00...</td>
 <td>Data = « test1 »</td>
-<td>Filling « test1.txt » with « test1 » string</td>
+<td rowspan=6>Filling « test1.txt » with « test1 » string</td>
 </tr>
 <tr class="odd">
-<td>OOB</td>
+<td rowspan=5>OOB</td>
 <td>blockstate \xff</td>
 <td>→ Good Chunk</td>
 <td></td>
