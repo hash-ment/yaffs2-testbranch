@@ -1017,116 +1017,69 @@ options:
  --obj_id_to OBJ_ID_TO
                        Maximum Object_id to retain
  --snapshot SNAPSHOT   Reconstruct the NAND state at this timestamp (format 'YYYY-MM-DD hh:mm:ss')
-> --name NAME Retain only the file specified
+ --name NAME Retain only the file specified
+ --versions VERSIONS [VERSIONS ...]
+                       Versions (list) to retain
+ --version_from VERSION_FROM
+                       Minimum Version number to retain
+ --version_to VERSION_TO
+                       Maximum Version number to retain
+ --outdir OUTDIR       Output Directory : if set, restoration will be done /
+                       *** for [block|char]devices requires to be root ***
+ --debug {0,1,2} Debug level : 0 (none), 1 (base), 2 (detailed)
+ --last_only           If activated, process only the last file version. The
+                       restored files will not contain object_id and version
+ --wide                If activated, wide print (much more informations)
+ --autodetect          If activated, auto-detecting pagesize / oobsize /
+                       [littel|big]-endian
+ --autodetect_only     If activated, auto-detecting pagesize / oobsize /
+                       [littel|big]-endian and stop !
+ --pagesize PAGESIZE   Pagesize in bytes
+ --oobsize OOBSIZE     OOB size in bytes
+ --endianness {big,little}
+                       Little (default) or big endian
+ --restore_owner       If activated, restore owners
+                       *** requires to be root ***
+ --restore_right If activated, restore rights
+ --remove_path REMOVE_PATH
+                       Only for absolute symlink : remove base path
+                       e.g. if you have dir1/dir2/dir3/link1 --\> **/mnt/yaffs**/test1.txt
+                       --remove_path **/mnt/yaffs** will remove that string
+                       in the targer dir1/dir2/dir3/link1 --\> test1.txt
+                       then using –outdir /tmp/toto will restore
+                       /tmp/toto/dir1/dir2/dir3/link1 --\> /tmp/toto/test1.txt
 
-> --versions VERSIONS \[VERSIONS ...\]
+--------------------------------------------------------------------------------------------------------------------------
 
-> Versions (list) to retain
+Program : yaffs2_parser.py
+Author : Hashment
+Date : 30/05/2025
 
-> --version_from VERSION_FROM
+This program can :
+ - automatically detect the structure pagesize/oobsize : [(2048, 64),
+   (4096, 128), (512, 16), (8192, 224), (16384, 448)]
+ - show all objects \*\*even deleted\*\* present in the YAFFS2 image such as :
+     o files <--
+     o directories <--
+     o symlinks <--
+     o block devices <--
+     o unix socket (shown but not restorable)
+ - ultra detailed output (permissions, size, timestamps ctime, atime, mtime)
+ - fine select YAFFS2 objects by object_ids, versions (list and/or from-to)
+ - fine select YAFFS2 objects by name
+ - fine select YAFFS2 objects by timestamp snapshot
 
-> Minimum Version number to retain
+Restoration :
+ - everything is restorable (except unix soket) in a specified out
+   directory mentionned with --outdir
+ - orphan data is restorable : it represents data chunks without
+   metadata (e.g. name, size, timestamps, owner ect.)
 
-> --version_to VERSION_TO
-
-> Maximum Version number to retain
-
-> --outdir OUTDIR Output Directory : if set, restoration will be done /
-> \*\*\* for \[block\|char\]devices requires to be root \*\*\*
-
-> --debug {0,1,2} Debug level : 0 (none), 1 (base), 2 (detailed)
-
-> --last_only If activated, process only the last file version. The
-> restored files will not contain object_id and version
-
-> --wide If activated, wide print (much more informations)
-
-> --autodetect If activated, auto-detecting pagesize / oobsize /
-> \[littel\|big\]-endian
-
-> --autodetect_only If activated, auto-detecting pagesize / oobsize /
-> \[littel\|big\]-endian and stop !
-
-> --pagesize PAGESIZE Pagesize in bytes
-
-> --oobsize OOBSIZE OOB size in bytes
-
-> --endianness {big,little}
-
-> Little (default) or big endian
-
-> --restore_owner If activated, restore owners \*\*\* requires to be
-> root \*\*\*
-
-> --restore_right If activated, restore rights
-
-> --remove_path REMOVE_PATH
-
-> Only for absolute symlink : remove base path
-
-> e.g. if you have dir1/dir2/dir3/link1 --\> **/mnt/yaffs**/test1.txt
-
-> --remove_path **/mnt/yaffs** will remove that string
-
-> in the targer dir1/dir2/dir3/link1 --\> test1.txt
-
-> then using –outdir /tmp/toto will restore
-
-> /tmp/toto/dir1/dir2/dir3/link1 --\> /tmp/toto/test1.txt
-
-> --------------------------------------------------------------------------------------------------------------------------
-
-> Program : yaffs2_parser.py
-
-> Author : Hashment
-
-> Date : 30/05/2025
-
-> This program can :
-
->  - automatically detect the structure pagesize/oobsize : \[(2048, 64),
-> (4096, 128), (512, 16), (8192, 224), (16384, 448)\]
-
->  - show all objects \*\*even deleted\*\* present in the YAFFS2 image
-> such as :
-
-> o files \<--
-
-> o directories \<--
-
-> o symlinks \<--
-
-> o block devices\<--
-
-> o unix socket (shown but not restorable)
-
->  - ultra detailed output (permissions, size, timestamps ctime, atime,
-> mtime)
-
->  - fine select YAFFS2 objects by object_ids, versions (list and/or
-> from-to)
-
->  - fine select YAFFS2 objects by name
-
->  - fine select YAFFS2 objects by timestamp snapshot
-
-> Restoration :
-
->  - everything is restorable (except unix soket) in a specified out
-> directory mentionned with --outdir
-
->  - orphan data is restorable : it represents data chunks without
-> metadata (e.g. name, size, timestamps, owner ect.)
-
-> Debug :
-
->  - very fine debug the YAFFS2 structure (CHUNKS, data_part, oob_part,
-> fields, etc ...)
-
-> -\> do not forget to activate --debug 2 for that
-
-> -\> do not forget to store output to a debug file or pipe to 'less' or
-> 'more'
+Debug :
+ - very fine debug the YAFFS2 structure (CHUNKS, data_part, oob_part,
+   fields, etc ...)
+   -> do not forget to activate --debug 2 for that
+   -> do not forget to store output to a debug file or pipe to 'less' or 'more'
 ```
 
 ## <span id="anchor-37"></span>List all objects (even renamed, truncated, deleted)
