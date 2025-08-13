@@ -980,7 +980,7 @@ Furthermore, it needs to have the ability to manage :
 
 Here is the program help
 ```bash
-usage: yaffs2_parser.py \[-h\] --image IMAGE [--obj_ids OBJ_IDS [OBJ_IDS …]]
+usage: yaffs2_parser.py [-h] --image IMAGE   [--obj_ids OBJ_IDS [OBJ_IDS …]]
                                              [--obj_id_from OBJ_ID_FROM]
                                              [--obj_id_to OBJ_ID_TO]
                                              [--snapshot SNAPSHOT]
@@ -1253,11 +1253,11 @@ filesystem.
 
 Let’s try the snapshot parameter :
 
-> \$ python yaffs2_parser.py --image snapshot_12_truncate_lorem.bin
-> --autodetect --wide **--snapshot='2025-06-05 15:26:03'**
+```bash
+$ python yaffs2_parser.py --image snapshot_12_truncate_lorem.bin --autodetect --wide --snapshot='2025-06-05 15:26:03'
+```
 
-> <img src="images/Pictures/10000000000007D200000121D90DBDE5.png"
-> style="width:17cm;height:2.454cm" />
+<img src="images/Pictures/10000000000007D200000121D90DBDE5.png" style="width:17cm;height:2.454cm" />
 
 We can see that we have a snapshot of the filesystem at this time.
 
@@ -1272,92 +1272,65 @@ specified directory :
 
 For full demonstration, I ran as root and without --snapshot activated.
 
-> \$ python yaffs2_parser.py --image snapshot_12_truncate_lorem.bin
-> --autodetect **--outdir /tmp/toto**
+```bash
+$ python yaffs2_parser.py --image snapshot_12_truncate_lorem.bin --autodetect **--outdir /tmp/toto**
+```
 
-<img src="images/Pictures/10000000000005C3000002D1525F02D2.jpg"
-style="width:17cm;height:8.31cm" />
+<img src="images/Pictures/10000000000005C3000002D1525F02D2.jpg" style="width:17cm;height:8.31cm" />
 
 and here is what I get in /tmp/toto directory :
 
-> \$ ls -lR /tmp/toto
+```bash
+$ ls -lR /tmp/toto
 
-> /tmp/toto:
+/tmp/toto:
+total 16
+drwxr-xr-x 5 root root 4096 juin 8 16:24 dir1
+drwxr-xr-x 2 root root 4096 juin 8 16:24 dir6
+-rwxr-xr-x 1 root root 10 juin 8 16:24 orphan.o513.v0
+-rwxr-xr-x 1 root root 5 juin 8 16:24 test1.txt.o257.v1
 
-> total 16
+/tmp/toto/dir1:
+total 24
+drwxr-xr-x 5 root root 4096 juin 8 16:24 dir2
+drwxr-xr-x 3 root root 4096 juin 8 16:24 dir4
+drwxr-xr-x 2 root root 4096 juin 8 16:24 dir41
+-rwxr-xr-x 1 root root 445 juin 8 16:24 lorem.txt.o269.v1
+-rwxr-xr-x 1 root root 300 juin 8 16:24 lorem.txt.o269.v2
+-rwxr-xr-x 1 root root 300 juin 8 16:24 lorem.txt.o269.v3
 
-> drwxr-xr-x 5 root root 4096 juin 8 16:24 dir1
+/tmp/toto/dir1/dir2:
+total 12
+drwxr-xr-x 2 root root 4096 juin 8 16:24 dir3
+drwxr-xr-x 2 root root 4096 juin 8 16:24 dir5
+drwxr-xr-x 2 root root 4096 juin 8 16:24 dir5.moved
+prw-r--r-- 1 root root 0 juin 8 16:24 named_pipe.o265.v0
 
-> drwxr-xr-x 2 root root 4096 juin 8 16:24 dir6
+/tmp/toto/dir1/dir2/dir3:
+total 0
+lrwxrwxrwx 1 root root 19 juin 8 16:24 **link1 -> /tmp/toto/test1.txt
 
-> -rwxr-xr-x 1 root root 10 juin 8 16:24 orphan.o513.v0
+/tmp/toto/dir1/dir2/dir5:
+total 0
+brw-r--r-- 1 root root 11, 0 juin 8 16:24 block_device.o266.v0
 
-> -rwxr-xr-x 1 root root 5 juin 8 16:24 test1.txt.o257.v1
+/tmp/toto/dir1/dir2/dir5.moved:
+total 0
 
-> /tmp/toto/dir1:
+/tmp/toto/dir1/dir4:
+total 4
+drwxr-xr-x 2 root root 4096 juin 8 16:24 dir5
 
-> total 24
+/tmp/toto/dir1/dir4/dir5:
+total 0
 
-> drwxr-xr-x 5 root root 4096 juin 8 16:24 dir2
+/tmp/toto/dir1/dir41:
+total 4
+-rwxr-xr-x 1 root root 5 juin 8 16:24 test2.txt.o268.v1
 
-> drwxr-xr-x 3 root root 4096 juin 8 16:24 dir4
-
-> drwxr-xr-x 2 root root 4096 juin 8 16:24 dir41
-
-> -rwxr-xr-x 1 root root 445 juin 8 16:24 lorem.txt.o269.v1
-
-> -rwxr-xr-x 1 root root 300 juin 8 16:24 lorem.txt.o269.v2
-
-> -rwxr-xr-x 1 root root 300 juin 8 16:24 lorem.txt.o269.v3
-
-> /tmp/toto/dir1/dir2:
-
-> total 12
-
-> drwxr-xr-x 2 root root 4096 juin 8 16:24 dir3
-
-> drwxr-xr-x 2 root root 4096 juin 8 16:24 dir5
-
-> drwxr-xr-x 2 root root 4096 juin 8 16:24 dir5.moved
-
-> prw-r--r-- 1 root root 0 juin 8 16:24 named_pipe.o265.v0
-
-> /tmp/toto/dir1/dir2/dir3:
-
-> total 0
-
-> lrwxrwxrwx 1 root root 19 juin 8 16:24 **link1 -\>
-> /tmp/toto/test1.txt**
-
-> /tmp/toto/dir1/dir2/dir5:
-
-> total 0
-
-> brw-r--r-- 1 root root 11, 0 juin 8 16:24 block_device.o266.v0
-
-> /tmp/toto/dir1/dir2/dir5.moved:
-
-> total 0
-
-> /tmp/toto/dir1/dir4:
-
-> total 4
-
-> drwxr-xr-x 2 root root 4096 juin 8 16:24 dir5
-
-> /tmp/toto/dir1/dir4/dir5:
-
-> total 0
-
-> /tmp/toto/dir1/dir41:
-
-> total 4
-
-> -rwxr-xr-x 1 root root 5 juin 8 16:24 test2.txt.o268.v1
-
-> /tmp/toto/dir6:
-
-> total 0
+/tmp/toto/dir6:
+total 0
+```
 
 ***Note \#1*** : The restored link seems to be broken, it’s normal
 because as you can see, restored files are suffixed with their object_id
@@ -1378,9 +1351,9 @@ restored.
 
 For that, the --restore_owner parameter need to be added.
 
-> \$ python yaffs2_parser.py --image snapshot_12_truncate_lorem.bin
-> --autodetect --snapshot='2025-06-05 15:26:03'  
-> **--outdir /tmp/toto --restore_owner**
+```bash
+$ python yaffs2_parser.py --image snapshot_12_truncate_lorem.bin --autodetect --snapshot='2025-06-05 15:26:03' --outdir /tmp/toto --restore_owner
+```
 
 ### <span id="anchor-49"></span>Right restoration
 
@@ -1389,9 +1362,9 @@ By default, restores files and directory were done with user umask.
 But, if you want to restore the exact rights, just add --restore_right
 parameter.
 
-> \$ python yaffs2_parser.py --image snapshot_12_truncate_lorem.bin
-> --autodetect --snapshot='2025-06-05 15:26:03'  
-> **--outdir /tmp/toto –restore_right**
+```bash
+$ python yaffs2_parser.py --image snapshot_12_truncate_lorem.bin --autodetect --snapshot='2025-06-05 15:26:03'  --outdir /tmp/toto –restore_right
+```
 
 ## <span id="anchor-50"></span>Forensic
 
