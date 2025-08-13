@@ -1669,36 +1669,20 @@ We can see 3 parts :
 
 #### <span id="anchor-54"></span>OOB Part
 
-> +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-
-> ---\[ oob part \]--- 00000800 ff ff 01 10 00 00 01 01 00 10 01 00 00
-> 80 00 00 \|................\|
-
-> size: 64 bytes 00000810 00 00 2a 38 a2 11 04 00 00 00 fb ff ff ff ff
-> ff \|..\*8............\|
-
-> 00000820 ff ff ff ff ff ff ff ff c3 ff 03 aa 5a 57 ff ff
-> \|............ZW..\|
-
-> 00000830 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> ........................\[ Analyze \]........................
-
-> blockstate (1, 1) -\> \xff
-
-> sequence_number (2, 4) -\> \x01 \x10 \x00 \x00
-
-> object_id (6, 4) -\> \x01 \x01 \x00 \x10
-
-> chunk_id (10, 4) -\> \x01 \x00 \x00 \x80
-
-> n_bytes (14, 2) -\> \x00 \x00
-
-> result = {'obj_type': 1, 'parent_obj_id': 1, 'has_packed_data': True,
-> 'blockstate': 255, 'sequence_number': 4097, 'object_id': 257,
-> 'chunk_id': 0, 'n_bytes': 0, 'obj_type_name':
-> 'YAFFS_OBJECT_TYPE_FILE', 'bs_signif': 'GOOD Chunk', 'file_size': 0}
+```bash
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+---[ oob part ]---  00000800 ff ff 01 10 00 00 01 01 00 10 01 00 00 80 00 00 |................|
+size: 64 bytes      00000810 00 00 2a 38 a2 11 04 00 00 00 fb ff ff ff ff ff |..*8............|
+                    00000820 ff ff ff ff ff ff ff ff c3 ff 03 aa 5a 57 ff ff |............ZW..|
+                    00000830 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                          ........................[ Analyze ]........................
+                          blockstate (1, 1) -> \xff
+                          sequence_number (2, 4) -> \x01 \x10 \x00 \x00
+                          object_id (6, 4) -> \x01 \x01 \x00 \x10
+                          chunk_id (10, 4) -> \x01 \x00 \x00 \x80
+                          n_bytes (14, 2) -> \x00 \x00
+result = {'obj_type': 1, 'parent_obj_id': 1, 'has_packed_data': True, 'blockstate': 255, 'sequence_number': 4097, 'object_id': 257, 'chunk_id': 0, 'n_bytes': 0, 'obj_type_name': 'YAFFS_OBJECT_TYPE_FILE', 'bs_signif': 'GOOD Chunk', 'file_size': 0}
+```
 
 We can see 3 parts :
 
