@@ -242,11 +242,11 @@ pages at once.
 
 Typical values :
 
-|            |           |             |                       |                       |
-|------------|-----------|-------------|-----------------------|-----------------------|
-| Page_Size  | OOB_Size  | Erase_Block | Total Pages per Block |                       |
-| 2048 bytes | 64 bytes  | 128 pages   | 128                   | ← I will use this one |
-| 4096 bytes | 128 bytes | 64 pages    | 64                    |                       |
+|            |           |             |                       | 
+|------------|-----------|-------------|-----------------------|
+| Page_Size  | OOB_Size  | Erase_Block | Total Pages per Block |
+| 2048 bytes | 64 bytes  | 128 pages   | 128                   | ← I will use this one
+| 4096 bytes | 128 bytes | 64 pages    | 64                    |
 
 So, a typical NAND block might be:
 
