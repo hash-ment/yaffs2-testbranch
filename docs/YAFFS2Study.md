@@ -1110,67 +1110,48 @@ truncation.
 
 Here is the file tree at the end of these operations :
 
-> \# ls -lR
+```bash
+# ls -lR
+.:
+total 7
+drwxr-xr-x 1 0 0 2048 Jun 5 13:26 dir1
+drwxr-xr-x 1 0 0 2048 Jun 5 13:26 dir6
+drwx------ 1 0 0 2048 Jun 5 13:25 lost+found
+-rw-r--r-- 1 0 0 5 Jun 5 13:25 test1.txt
 
-> .:
+./dir1:
+total 5
+drwxr-xr-x 1 0 0 2048 Jun 5 13:26 dir2
+drwxr-xr-x 1 0 0 2048 Jun 5 13:26 dir41
+-rw-r--r-- 1 0 0 300 Jun 5 13:26 lorem.txt
 
-> total 7
+./dir1/dir2:
+total 4
+drwxr-xr-x 1 0 0 2048 Jun 5 13:25 dir3
+prw-r--r-- 1 0 0 2048 Jun 5 13:25 named_pipe
 
-> drwxr-xr-x 1 0 0 2048 Jun 5 13:26 dir1
+./dir1/dir2/dir3:
+total 1
+lrwxrwxrwx 1 0 0 18 Jun 5 13:25 link1 -> ../../../test1.txt
 
-> drwxr-xr-x 1 0 0 2048 Jun 5 13:26 dir6
+./dir1/dir41:
+total 1
+-rw-r--r-- 1 0 0 5 Jun 5 13:26 test2.txt
 
-> drwx------ 1 0 0 2048 Jun 5 13:25 lost+found
+./dir6:
+total 2
+srwxr-xr-x 1 0 0 2048 Jun 5 13:26 aSocket.sock
 
-> -rw-r--r-- 1 0 0 5 Jun 5 13:25 test1.txt
-
-> ./dir1:
-
-> total 5
-
-> drwxr-xr-x 1 0 0 2048 Jun 5 13:26 dir2
-
-> drwxr-xr-x 1 0 0 2048 Jun 5 13:26 dir41
-
-> -rw-r--r-- 1 0 0 300 Jun 5 13:26 lorem.txt
-
-> ./dir1/dir2:
-
-> total 4
-
-> drwxr-xr-x 1 0 0 2048 Jun 5 13:25 dir3
-
-> prw-r--r-- 1 0 0 2048 Jun 5 13:25 named_pipe
-
-> ./dir1/dir2/dir3:
-
-> total 1
-
-> lrwxrwxrwx 1 0 0 18 Jun 5 13:25 link1 -\> ../../../test1.txt
-
-> ./dir1/dir41:
-
-> total 1
-
-> -rw-r--r-- 1 0 0 5 Jun 5 13:26 test2.txt
-
-> ./dir6:
-
-> total 2
-
-> srwxr-xr-x 1 0 0 2048 Jun 5 13:26 aSocket.sock
-
-> ./lost+found:
-
-> total 0
+./lost+found:
+total 0
+```
 
 When I run my forensic program with --autodetect, it shows :
 
-> \$ python yaffs2_parser.py --image snapshot_12_truncate_lorem.bin
-> –autodetect
-
-> <img src="images/Pictures/10000000000003A3000002DFCAD66552.jpg"
-> style="width:17cm;height:13.42cm" />
+```bash
+$ python yaffs2_parser.py --image snapshot_12_truncate_lorem.bin –autodetect
+```
+<img src="images/Pictures/10000000000003A3000002DFCAD66552.jpg" style="width:17cm;height:13.42cm" />
 
 ### <span id="anchor-38"></span>Auto-detection
 
