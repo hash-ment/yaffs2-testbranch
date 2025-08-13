@@ -951,13 +951,13 @@ implies chunk_id=0<br />
 <td></td>
 </tr>
 <tr class="even">
-<td><p>Chunk #4</p>
+<td rowspan=16><p>Chunk #4</p>
 <p>OBJ = 1</p>
 <p>CHUNK_ID=0</p></td>
-<td>Data</td>
+<td rowspan=11>Data</td>
 <td>name </td>
 <td></td>
-<td><p>Update parent directory</p>
+<td rowspan=16><p>Update parent directory</p>
 <p>=</p>
 <p>root directory /</p></td>
 </tr>
@@ -1037,7 +1037,7 @@ implies chunk_id=0<br />
 <td></td>
 </tr>
 <tr class="odd">
-<td>OOB</td>
+<td rowspan=5>OOB</td>
 <td>blockstate \xff</td>
 <td>→ Good Chunk</td>
 <td></td>
