@@ -645,406 +645,123 @@ The example consists of a file creation named ‘test1.txt’ in the root
 directory / (object_id=1).
 
 <table>
-<tbody>
-<tr class="odd">
-<td>Chunk</td>
-<td>Part</td>
-<td>Fields<br />
-(little-endian except ASCII)</td>
-<td>Explanation</td>
-<td>Description</td>
-</tr>
-<tr class="even">
-<td rowspan=16><p>Chunk #1</p>
-<p>OBJ = 257</p>
-<p>CHUNK_ID=0</p></td>
-<td rowspan=11>Data</td>
-<td>name test1.txt ...</td>
-<td rowspan=16>File « test1.txt » creation</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>yst_mode \xa4 \x81 \x00 \x00</td>
-<td>0x<strong>8</strong>1a4 :<br />
-0x<strong>8</strong> → it’s a file<br />
-0x1a4 → (644)o → rw-r--r--</td>
-</tr>
-<tr class="even">
-<td>yst_uid \x00 \x00 \x00 \x00</td>
-<td>Uid = 0</td>
-</tr>
-<tr class="odd">
-<td>yst_gid \x00 \x00 \x00 \x00</td>
-<td>Gid = 0</td>
-</tr>
-<tr class="even">
-<td>yst_atime \x3b \x12 \x37 \x68</td>
-<td>0x6837123b → (1748439611)d<br />
-28 mai 2025 15:40:11</td>
-</tr>
-<tr class="odd">
-<td>yst_mtime \x3b \x12 \x37 \x68</td>
-<td>0x6837123b → (1748439611)d<br />
-28 mai 2025 15:40:11</td>
-</tr>
-<tr class="even">
-<td>yst_ctime \x3b \x12 \x37 \x68</td>
-<td>0x6837123b → (1748439611)d<br />
-28 mai 2025 15:40:11</td>
-</tr>
-<tr class="odd">
-<td>file_size_low \x00 \x00 \x00 \x00</td>
-<td>0 byte</td>
-</tr>
-<tr class="even">
-<td>alias \xff ….</td>
-<td>NA</td>
-</tr>
-<tr class="odd">
-<td>yst_rdev \x00 \x00 \x00 \x00</td>
-<td>NA</td>
-</tr>
-<tr class="even">
-<td>file_size_high \x00 \x00 \x00 \x00</td>
-<td>0x0000 → 0 byte</td>
-</tr>
-<tr class="odd">
-<td rowspan=5 >OOB</td>
-<td>blockstate \xff</td>
-<td>→ Good Chunk</td>
-</tr>
-<tr class="even">
-<td>sequence_number \x01 \x10 \x00 \x00</td>
-<td>0x00001001 → (4097)d</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>object_id \x01 \x01 \x00 \x10</td>
-<td>0x<strong>1</strong>0000101 →<br />
-0x<strong>1</strong> → the chunk represents a file<br />
-0x0000101 → object_id= 257</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>chunk_id \x01 \x00 \x00 \x80</td>
-<td>0x<strong>8</strong>0000001 :<br />
-0x<strong>8</strong> → header chunk<br />
-implies chunk_id=0<br />
-0x0000001 → <strong>parent_id=1<br />
-→ in root directory</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>n_bytes \x00 \x00</td>
-<td>0x0000 → 0 byte</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan=6><p>Chunk #2</p>
-<p>OBJ = 257</p>
-<p>CHUNK_ID=1</p></td>
-<td>Data</td>
-<td>test1\x00\x00...</td>
-<td>Data = « test1 »</td>
-<td rowspan=6>Filling « test1.txt » with « test1 » string</td>
-</tr>
-<tr class="odd">
-<td rowspan=5>OOB</td>
-<td>blockstate \xff</td>
-<td>→ Good Chunk</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sequence_number \x01 \x10 \x00 \x00</td>
-<td>0x00001001 → (4097)d</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>object_id \x01 \x01 \x00 \x00</td>
-<td>0x<strong>0</strong>0000101 →<br />
-0x<strong>0</strong> → the chunk represents data<br />
-0x101 → object_id= 257</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>chunk_id \x01 \x00 \x00 \x00</td>
-<td>0x<strong>0</strong>0000001 :<br />
-0x<strong>0</strong> → data chunk<br />
-0x0000001 → chunk_id=1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>n_bytes \x05 \x00</td>
-<td>0x0005 → 5 bytes</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan=16><p>Chunk #3</p>
-<p>OBJ = 257</p>
-<p>CHUNK_ID=0</p></td>
-<td rowspan=11>Data</td>
-<td>name test1.txt ...</td>
-<td></td>
-<td rowspan=16>Update « test1.txt » metadata</td>
-</tr>
-<tr class="odd">
-<td>yst_mode \xa4 \x81 \x00 \x00</td>
-<td>0x<strong>8</strong>1a4 :<br />
-(0x<strong>8</strong>)h → it’s a file<br />
-(0x1a4)h → (644)o → rw-r--r--</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>yst_uid \x00 \x00 \x00 \x00</td>
-<td>Uid = 0</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>yst_gid \x00 \x00 \x00 \x00</td>
-<td>Gid = 0</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>yst_atime \x3b \x12 \x37 \x68</td>
-<td>0x6837123b → (1748439611)d<br />
-28 mai 2025 15:40:11</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>yst_mtime \x3b \x12 \x37 \x68</td>
-<td>0x6837123b → (1748439611)d<br />
-28 mai 2025 15:40:11</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>yst_ctime \x3b \x12 \x37 \x68</td>
-<td>0x6837123b → (1748439611)d<br />
-28 mai 2025 15:40:11</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>file_size_low \x05 \x00 \x00 \x00</td>
-<td>0x00000005 → 5 bytes</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>alias \xff ….</td>
-<td>NA</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>yst_rdev \x00 \x00 \x00 \x00</td>
-<td>NA</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>file_size_high \x00 \x00 \x00 \x00</td>
-<td>0x00000000 → 0 byte</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan=5 >OOB</td>
-<td>blockstate \xff</td>
-<td>→ Good Chunk</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sequence_number \x01 \x10 \x00 \x00</td>
-<td>0x00001001 : (4097)d</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>object_id \x01 \x01 \x00 \x10</td>
-<td>0x<strong>1</strong>0000101 →<br />
-0x<strong>1</strong> → the chunk represents a file<br />
-0x0000101 → object_id= 257</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>chunk_id \x01 \x00 \x00 \x80</td>
-<td>0x<strong>8</strong>0000001 :<br />
-0x<strong>8</strong> → header chunk<br />
-0x0000001 → chunk_id=1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>n_bytes \x50 \x00</td>
-<td>0x0005 → 5 bytes</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan=16><p>Chunk #4</p>
-<p>OBJ = 1</p>
-<p>CHUNK_ID=0</p></td>
-<td rowspan=11>Data</td>
-<td>name </td>
-<td></td>
-<td rowspan=16><p>Update parent directory</p>
-<p>=</p>
-<p>root directory /</p></td>
-</tr>
-<tr class="odd">
-<td>yst_mode \xed \x41 \x00 \x00</td>
-<td>0x<strong>4</strong>1ed :<br />
-(0x<strong>4</strong>)h → it’s a directory<br />
-(0x1ed)h → (755)o → rwxr-xr-x</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>yst_uid \x00 \x00 \x00 \x00</td>
-<td>Uid = 0</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>yst_gid \x00 \x00 \x00 \x00</td>
-<td>Gid = 0</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>yst_atime \x32 \x12 \x37 \x68</td>
-<td>0x68371232 → (1748439602)d<br />
-28 mai 2025 15:40:02</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>yst_mtime \x3b \x12 \x37 \x68</td>
-<td>0x6837123b → (1748439611)d<br />
-28 mai 2025 15:40:11</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>yst_ctime \x3b \x12 \x37 \x68</td>
-<td>0x6837123b → (1748439611)d<br />
-28 mai 2025 15:40:11</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>file_size_low \xff \xff \xff \xff</td>
-<td>0xffffffff → NA bytes</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>alias \xff ….</td>
-<td>NA</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>yst_rdev \x00 \x00 \x00 \x00</td>
-<td>NA</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>file_size_high \xff \xff \xff \xff</td>
-<td>0xffffffff → NA byte</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan=5>OOB</td>
-<td>blockstate \xff</td>
-<td>→ Good Chunk</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sequence_number \x01 \x10 \x00 \x00</td>
-<td>0x00001001 : (4097)d</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>object_id \x01 \x00 \x00 \x30</td>
-<td>0x<strong>3</strong>0000001 →<br />
-0x<strong>3</strong> → the chunk represents a<br />
-directory<br />
-0x0000001 → object_id= 1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>chunk_id \x00 \x00 \x00 \x80</td>
-<td>0x<strong>8</strong>0000000 :<br />
-0x<strong>8</strong> → header chunk<br />
-0x0000000 → chunk_id=0</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>n_bytes \x00 \x00</td>
-<td>0x0000 → 0 byte</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Chunk</th>
+      <th>Part</th>
+      <th>Fields (little-endian except ASCII)</th>
+      <th>Explanation</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- Chunk #1 -->
+    <tr>
+      <td rowspan="16">Chunk #1<br>OBJ = 257<br>CHUNK_ID=0</td>
+      <td rowspan="11">Data</td>
+      <td>name test1.txt ...</td>
+      <td></td>
+      <td rowspan="16">File « test1.txt » creation</td>
+    </tr>
+    <tr>
+      <td>yst_mode \xa4 \x81 \x00 \x00</td>
+      <td>0x81a4 :<br>0x8 → it’s a file<br>0x1a4 → (644)o → rw-r--r--</td>
+    </tr>
+    <tr><td>yst_uid \x00 \x00 \x00 \x00</td><td>Uid = 0</td></tr>
+    <tr><td>yst_gid \x00 \x00 \x00 \x00</td><td>Gid = 0</td></tr>
+    <tr><td>yst_atime \x3b \x12 \x37 \x68</td><td>0x6837123b → (1748439611)d<br>28 mai 2025 15:40:11</td></tr>
+    <tr><td>yst_mtime \x3b \x12 \x37 \x68</td><td>0x6837123b → (1748439611)d<br>28 mai 2025 15:40:11</td></tr>
+    <tr><td>yst_ctime \x3b \x12 \x37 \x68</td><td>0x6837123b → (1748439611)d<br>28 mai 2025 15:40:11</td></tr>
+    <tr><td>file_size_low \x00 \x00 \x00 \x00</td><td>0 byte</td></tr>
+    <tr><td>alias \xff ….</td><td>NA</td></tr>
+    <tr><td>yst_rdev \x00 \x00 \x00 \x00</td><td>NA</td></tr>
+    <tr><td>file_size_high \x00 \x00 \x00 \x00</td><td>0x0000 → 0 byte</td></tr>
+    <tr>
+      <td rowspan="5">OOB</td>
+      <td>blockstate \xff</td>
+      <td>→ Good Chunk</td>
+    </tr>
+    <tr><td>sequence_number \x01 \x10 \x00 \x00</td><td>0x00001001 → (4097)d</td></tr>
+    <tr><td>object_id \x01 \x01 \x00 \x10</td><td>0x1 0000101 → file<br>object_id= 257</td></tr>
+    <tr><td>chunk_id \x01 \x00 \x00 \x80</td><td>0x8 0000001 : header chunk<br>parent_id=1 (root)</td></tr>
+    <tr><td>n_bytes \x00 \x00</td><td>0x0000 → 0 byte</td></tr>
+
+    <!-- Chunk #2 -->
+    <tr>
+      <td rowspan="6">Chunk #2<br>OBJ = 257<br>CHUNK_ID=1</td>
+      <td>Data</td>
+      <td>test1\x00\x00...</td>
+      <td>Data = « test1 »</td>
+      <td rowspan="6">Filling « test1.txt » with « test1 » string</td>
+    </tr>
+    <tr>
+      <td rowspan="5">OOB</td>
+      <td>blockstate \xff</td>
+      <td>→ Good Chunk</td>
+    </tr>
+    <tr><td>sequence_number \x01 \x10 \x00 \x00</td><td>0x00001001 → (4097)d</td></tr>
+    <tr><td>object_id \x01 \x01 \x00 \x00</td><td>0x0 0000101 → data<br>object_id= 257</td></tr>
+    <tr><td>chunk_id \x01 \x00 \x00 \x00</td><td>0x0 0000001 : data chunk<br>chunk_id=1</td></tr>
+    <tr><td>n_bytes \x05 \x00</td><td>0x0005 → 5 bytes</td></tr>
+
+    <!-- Chunk #3 -->
+    <tr>
+      <td rowspan="16">Chunk #3<br>OBJ = 257<br>CHUNK_ID=0</td>
+      <td rowspan="11">Data</td>
+      <td>name test1.txt ...</td>
+      <td></td>
+      <td rowspan="16">Update « test1.txt » metadata</td>
+    </tr>
+    <tr><td>yst_mode \xa4 \x81 \x00 \x00</td><td>0x81a4 : file (644)o</td></tr>
+    <tr><td>yst_uid \x00 \x00 \x00 \x00</td><td>Uid = 0</td></tr>
+    <tr><td>yst_gid \x00 \x00 \x00 \x00</td><td>Gid = 0</td></tr>
+    <tr><td>yst_atime \x3b \x12 \x37 \x68</td><td>0x6837123b → (1748439611)d<br>28 mai 2025 15:40:11</td></tr>
+    <tr><td>yst_mtime \x3b \x12 \x37 \x68</td><td>0x6837123b → (1748439611)d<br>28 mai 2025 15:40:11</td></tr>
+    <tr><td>yst_ctime \x3b \x12 \x37 \x68</td><td>0x6837123b → (1748439611)d<br>28 mai 2025 15:40:11</td></tr>
+    <tr><td>file_size_low \x05 \x00 \x00 \x00</td><td>0x00000005 → 5 bytes</td></tr>
+    <tr><td>alias \xff ….</td><td>NA</td></tr>
+    <tr><td>yst_rdev \x00 \x00 \x00 \x00</td><td>NA</td></tr>
+    <tr><td>file_size_high \x00 \x00 \x00 \x00</td><td>0x00000000 → 0 byte</td></tr>
+    <tr>
+      <td rowspan="5">OOB</td>
+      <td>blockstate \xff</td>
+      <td>→ Good Chunk</td>
+    </tr>
+    <tr><td>sequence_number \x01 \x10 \x00 \x00</td><td>0x00001001 : (4097)d</td></tr>
+    <tr><td>object_id \x01 \x01 \x00 \x10</td><td>0x1 0000101 → file<br>object_id= 257</td></tr>
+    <tr><td>chunk_id \x01 \x00 \x00 \x80</td><td>0x8 0000001 : header chunk<br>chunk_id=1</td></tr>
+    <tr><td>n_bytes \x50 \x00</td><td>0x0005 → 5 bytes</td></tr>
+
+    <!-- Chunk #4 -->
+    <tr>
+      <td rowspan="16">Chunk #4<br>OBJ = 1<br>CHUNK_ID=0</td>
+      <td rowspan="11">Data</td>
+      <td>name</td>
+      <td></td>
+      <td rowspan="16">Update parent directory = root directory /</td>
+    </tr>
+    <tr><td>yst_mode \xed \x41 \x00 \x00</td><td>0x41ed : directory (755)o</td></tr>
+    <tr><td>yst_uid \x00 \x00 \x00 \x00</td><td>Uid = 0</td></tr>
+    <tr><td>yst_gid \x00 \x00 \x00 \x00</td><td>Gid = 0</td></tr>
+    <tr><td>yst_atime \x32 \x12 \x37 \x68</td><td>0x68371232 → (1748439602)d<br>28 mai 2025 15:40:02</td></tr>
+    <tr><td>yst_mtime \x3b \x12 \x37 \x68</td><td>0x6837123b → (1748439611)d<br>28 mai 2025 15:40:11</td></tr>
+    <tr><td>yst_ctime \x3b \x12 \x37 \x68</td><td>0x6837123b → (1748439611)d<br>28 mai 2025 15:40:11</td></tr>
+    <tr><td>file_size_low \xff \xff \xff \xff</td><td>0xffffffff → NA bytes</td></tr>
+    <tr><td>alias \xff ….</td><td>NA</td></tr>
+    <tr><td>yst_rdev \x00 \x00 \x00 \x00</td><td>NA</td></tr>
+    <tr><td>file_size_high \xff \xff \xff \xff</td><td>0xffffffff → NA byte</td></tr>
+    <tr>
+      <td rowspan="5">OOB</td>
+      <td>blockstate \xff</td>
+      <td>→ Good Chunk</td>
+    </tr>
+    <tr><td>sequence_number \x01 \x10 \x00 \x00</td><td>0x00001001 : (4097)d</td></tr>
+    <tr><td>object_id \x01 \x00 \x00 \x30</td><td>0x3 0000001 → directory<br>object_id= 1</td></tr>
+    <tr><td>chunk_id \x00 \x00 \x00 \x80</td><td>0x8 0000000 : header chunk<br>chunk_id=0</td></tr>
+    <tr><td>n_bytes \x00 \x00</td><td>0x0000 → 0 byte</td></tr>
+
+  </tbody>
 </table>
 
 Resume:
