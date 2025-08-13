@@ -762,10 +762,10 @@ Resume:
 <table>
 <tbody>
 <tr class="odd">
-<td>Object ID</td>
-<td>Chunk ID</td>
-<td>Particularity</td>
-<td>Description</td>
+<td><b>Object ID</b></td>
+<td><b>Chunk ID</b></td>
+<td><b>Particularity</b></td>
+<td><b>Description</b></td>
 </tr>
 <tr class="even">
 <td>257</td>
