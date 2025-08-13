@@ -663,7 +663,7 @@ directory / (object_id=1).
 <td></td>
 <td>File « test1.txt » creation</td>
 </tr>
-<tr rawspan=16 class="odd">
+<tr rowspan=16 class="odd">
 <td>yst_mode \xa4 \x81 \x00 \x00</td>
 <td>0x<strong>8</strong>1a4 :<br />
 0x<strong>8</strong> → it’s a file<br />
