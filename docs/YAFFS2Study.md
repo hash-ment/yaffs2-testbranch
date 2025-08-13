@@ -1533,31 +1533,31 @@ size: 2048 bytes    00000010 74 78 74 00 00 00 00 00 00 00 00 00 00 00 00 00 |tx
                     000007e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
                     000007f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
                              ........................[ Analyze ]........................
-                             junk0 (0, 10) -> x01 x00 x00 x00 x01 x00 x00 x00 xff xff
-                             name (10, 254) -> x74 x65 x73 x74 x31 x2e x74 x78 x74 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x00 x
-                             junk1 (264, 4) -> x00 x00 xff xff
-                             yst_mode (268, 4) -> xa4 x81 x00 x00
-                             yst_uid (272, 4) -> x00 x00 x00 x00
-                             yst_gid (276, 4) -> x00 x00 x00 x00
-                             yst_atime (280, 4) -> xd4 x9a x41 x68
-                             yst_mtime (284, 4) -> xd4 x9a x41 x68
-                             yst_ctime (288, 4) -> xd4 x9a x41 x68
-                             file_size_low (292, 4) -> x00 x00 x00 x00
-                             equiv_id (296, 4) -> xff xff xff xff
-                             alias (300, 160) -> xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff xff 
-                             yst_rdev (460, 4) -> x00 x00 x00 x00
-                             win_ctime_1 (464, 4) -> xd4 x9a x41 x68
-                             win_ctime_2 (468, 4) -> x00 x00 x00 x00
-                             win_atime_1 (472, 4) -> xd4 x9a x41 x68
-                             win_atime_2 (476, 4) -> x00 x00 x00 x00
-                             win_mtime_1 (480, 4) -> xd4 x9a x41 x68
-                             win_mtime_2 (484, 4) -> x00 x00 x00 x00
-                             inband_shad_obj_id (488, 4) -> x00 x00 x00 x00
-                             inband_is_shrink (492, 4) -> xff xff xff xff
-                             file_size_high (496, 4) -> x00 x00 x00 x00
-                             reserved (500, 1) -> xff
-                             shadows_obj (501, 4) -> xff xff xff x00
-                             is_shrink (505, 4) -> x00 x00 x00 x00
+                             junk0 (0, 10) -> \x01 \x00 \x00 \x00 \x01 \x00 \x00 \x00 \xff \xff
+                             name (10, 254) -> \x74 \x65 \x73 \x74 \x31 \x2e \x74 \x78 \x74 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x00 \x
+                             junk1 (264, 4) -> \x00 \x00 \xff \xff
+                             yst_mode (268, 4) -> \xa4 \x81 \x00 \x00
+                             yst_uid (272, 4) -> \x00 \x00 \x00 \x00
+                             yst_gid (276, 4) -> \x00 \x00 \x00 \x00
+                             yst_atime (280, 4) -> \xd4 \x9a \x41 \x68
+                             yst_mtime (284, 4) -> \xd4 \x9a \x41 \x68
+                             yst_ctime (288, 4) -> \xd4 \x9a \x41 \x68
+                             file_size_low (292, 4) -> \x00 \x00 \x00 \x00
+                             equiv_id (296, 4) -> \xff \xff \xff \xff
+                             alias (300, 160) -> \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff \xff 
+                             yst_rdev (460, 4) -> \x00 \x00 \x00 \x00
+                             win_ctime_1 (464, 4) -> \xd4 \x9a \x41 \x68
+                             win_ctime_2 (468, 4) -> \x00 \x00 \x00 \x00
+                             win_atime_1 (472, 4) -> \xd4 \x9a \x41 \x68
+                             win_atime_2 (476, 4) -> \x00 \x00 \x00 \x00
+                             win_mtime_1 (480, 4) -> \xd4 \x9a \x41 \x68
+                             win_mtime_2 (484, 4) -> \x00 \x00 \x00 \x00
+                             inband_shad_obj_id (488, 4) -> \x00 \x00 \x00 \x00
+                             inband_is_shrink (492, 4) -> \xff \xff \xff \xff
+                             file_size_high (496, 4) -> \x00 \x00 \x00 \x00
+                             reserved (500, 1) -> \xff
+                             shadows_obj (501, 4) -> \xff \xff \xff \x00
+                             is_shrink (505, 4) -> \x00 \x00 \x00 \x00
 result = {'file_size': 0, 'junk0': b'x01x00x00x00x01x00x00x00xffxff', 'name': 'test1.txt', 'junk1': 4294901760, 'yst_mode': 33188, 'yst_uid': 0, 'yst_gid': 0, 'yst_atime': 1749129940, 'yst_mtime': 1749129940, 'yst_ctime': 1749129940, 'file_size_low': 0, 'equiv_id': 4294967295, 'alias': '', 'yst_rdev': 0, 'win_ctime_1': 1749129940, 'win_ctime_2': 0, 'win_atime_1': 1749129940, 'win_atime_2': 0, 'win_mtime_1': 17491}
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
@@ -1567,11 +1567,11 @@ size: 64 bytes      00000810 00 00 2a 38 a2 11 04 00 00 00 fb ff ff ff ff ff |..
                     00000820 ff ff ff ff ff ff ff ff c3 ff 03 aa 5a 57 ff ff |............ZW..|
                     00000830 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
                              ........................[ Analyze ]........................
-                             blockstate (1, 1) -> xff
-                             sequence_number (2, 4) -> x01 x10 x00 x00
-                             object_id (6, 4) -> x01 x01 x00 x10
-                             chunk_id (10, 4) -> x01 x00 x00 x80
-                             n_bytes (14, 2) -> x00 x00
+                             blockstate (1, 1) -> \xff
+                             sequence_number (2, 4) -> \x01 \x10 \x00 \x00
+                             object_id (6, 4) -> \x01 \x01 \x00 \x10
+                             chunk_id (10, 4) -> \x01 \x00 \x00 \x80
+                             n_bytes (14, 2) -> \x00 \x00
 result = {'obj_type': 1, 'parent_obj_id': 1, 'has_packed_data': True, 'blockstate': 255, 'sequence_number': 4097, 'object_id': 257, 'chunk_id': 0, 'n_bytes': 0, 'obj_type_name': 'YAFFS_OBJECT_TYPE_FILE', 'bs_signif': 'GOOD Chunk', 'file_size': 0}
 ```
 
@@ -1603,148 +1603,63 @@ filesystems
 
 #### <span id="anchor-53"></span>Data Part
 
-> ---\[ data part \]--- 00000000 01 00 00 00 01 00 00 00 ff ff 74 65 73
-> 74 31 2e \|..........test1.\|
-
-> size: 2048 bytes 00000010 74 78 74 00 00 00 00 00 00 00 00 00 00 00 00
-> 00 \|txt.............\|
-
-> 00000020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000040 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000050 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000060 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000070 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000080 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000090 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 000000a0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 000000b0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 000000c0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 000000d0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 000000e0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 000000f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> \|................\|
-
-> 00000100 00 00 00 00 00 00 00 00 00 00 ff ff a4 81 00 00
-> \|................\|
-
-> 00000110 00 00 00 00 00 00 00 00 d4 9a 41 68 d4 9a 41 68
-> \|..........Ah..Ah\|
-
-> 00000120 d4 9a 41 68 00 00 00 00 ff ff ff ff ff ff ff ff
-> \|..Ah............\|
-
-> 00000130 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 00000140 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> \[snip\]
-
-> 000007b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000007c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000007d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000007e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> 000007f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-> \|................\|
-
-> ........................\[ Analyze \]........................
-
-> junk0 (0, 10) -\> \x01 \x00 \x00 \x00 \x01 \x00 \x00 \x00 \xff \xff
-
-> name (10, 254) -\> \x74 \x65 \x73 \x74 \x31 \x2e \x74 \x78 \x74 \x00
-> \x00 ...
-
-> junk1 (264, 4) -\> \x00 \x00 \xff \xff
-
-> yst_mode (268, 4) -\> \xa4 \x81 \x00 \x00
-
-> yst_uid (272, 4) -\> \x00 \x00 \x00 \x00
-
-> yst_gid (276, 4) -\> \x00 \x00 \x00 \x00
-
-> yst_atime (280, 4) -\> \xd4 \x9a \x41 \x68
-
-> yst_mtime (284, 4) -\> \xd4 \x9a \x41 \x68
-
-> yst_ctime (288, 4) -\> \xd4 \x9a \x41 \x68
-
-> file_size_low (292, 4) -\> \x00 \x00 \x00 \x00
-
-> equiv_id (296, 4) -\> \xff \xff \xff \xff
-
-> alias (300, 160) -\> \xff \xff \xff ...
-
-> yst_rdev (460, 4) -\> \x00 \x00 \x00 \x00
-
-> win_ctime_1 (464, 4) -\> \xd4 \x9a \x41 \x68
-
-> win_ctime_2 (468, 4) -\> \x00 \x00 \x00 \x00
-
-> win_atime_1 (472, 4) -\> \xd4 \x9a \x41 \x68
-
-> win_atime_2 (476, 4) -\> \x00 \x00 \x00 \x00
-
-> win_mtime_1 (480, 4) -\> \xd4 \x9a \x41 \x68
-
-> win_mtime_2 (484, 4) -\> \x00 \x00 \x00 \x00
-
-> inband_shad_obj_id (488, 4) -\> \x00 \x00 \x00 \x00
-
-> inband_is_shrink (492, 4) -\> \xff \xff \xff \xff
-
-> file_size_high (496, 4) -\> \x00 \x00 \x00 \x00
-
-> reserved (500, 1) -\> \xff
-
-> shadows_obj (501, 4) -\> \xff \xff \xff \x00
-
-> is_shrink (505, 4) -\> \x00 \x00 \x00 \x00
-
-> result = {'file_size': 0, 'junk0':
-> b'\x01\x00\x00\x00\x01\x00\x00\x00\xff\xff', 'name': 'test1.txt',
-> 'junk1': 4294901760, 'yst_mode': 33188, 'yst_uid': 0, 'yst_gid': 0,
-> 'yst_atime': 1749129940, 'yst_mtime': 1749129940, 'yst_ctime':
-> 1749129940, 'file_size_low': 0, 'equiv_id': 4294967295, 'alias': '',
-> 'yst_rdev': 0, 'win_ctime_1': 1749129940, 'win_ctime_2': 0,
-> 'win_atime_1': 1749129940, 'win_atime_2': 0, 'win_mtime_1': 17491}
-
-> +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+```bash
+---[ data part ]---   00000000 01 00 00 00 01 00 00 00 ff ff 74 65 73 74 31 2e |..........test1.|
+size: 2048 bytes      00000010 74 78 74 00 00 00 00 00 00 00 00 00 00 00 00 00 |txt.............|
+                      00000020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      00000030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      00000040 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      00000050 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      00000060 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      00000070 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      00000080 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      00000090 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      000000a0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      000000b0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      000000c0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      000000d0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      000000e0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      000000f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+                      00000100 00 00 00 00 00 00 00 00 00 00 ff ff a4 81 00 00 |................|
+                      00000110 00 00 00 00 00 00 00 00 d4 9a 41 68 d4 9a 41 68 |..........Ah..Ah|
+                      00000120 d4 9a 41 68 00 00 00 00 ff ff ff ff ff ff ff ff |..Ah............|
+                      00000130 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                      00000140 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+[snip]
+                      000007b0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                      000007c0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                      000007d0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                      000007e0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                      000007f0 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff |................|
+                             ........................\[ Analyze \]........................
+                              junk0 (0, 10) -> \x01 \x00 \x00 \x00 \x01 \x00 \x00 \x00 \xff \xff
+                              name (10, 254) -> \x74 \x65 \x73 \x74 \x31 \x2e \x74 \x78 \x74 \x00 \x00 ...
+                              junk1 (264, 4) -> \x00 \x00 \xff \xff
+                              yst_mode (268, 4) -> \xa4 \x81 \x00 \x00
+                              yst_uid (272, 4) -> \x00 \x00 \x00 \x00
+                              yst_gid (276, 4) -> \x00 \x00 \x00 \x00
+                              yst_atime (280, 4) -> \xd4 \x9a \x41 \x68
+                              yst_mtime (284, 4) -> \xd4 \x9a \x41 \x68
+                              yst_ctime (288, 4) -> \xd4 \x9a \x41 \x68
+                              file_size_low (292, 4) -> \x00 \x00 \x00 \x00
+                              equiv_id (296, 4) -> \xff \xff \xff \xff
+                              alias (300, 160) -> \xff \xff \xff ...
+                              yst_rdev (460, 4) -> \x00 \x00 \x00 \x00
+                              win_ctime_1 (464, 4) -> \xd4 \x9a \x41 \x68
+                              win_ctime_2 (468, 4) -> \x00 \x00 \x00 \x00
+                              win_atime_1 (472, 4) -> \xd4 \x9a \x41 \x68
+                              win_atime_2 (476, 4) -> \x00 \x00 \x00 \x00
+                              win_mtime_1 (480, 4) -> \xd4 \x9a \x41 \x68
+                              win_mtime_2 (484, 4) -> \x00 \x00 \x00 \x00
+                              inband_shad_obj_id (488, 4) -> \x00 \x00 \x00 \x00
+                              inband_is_shrink (492, 4) -> \xff \xff \xff \xff
+                              file_size_high (496, 4) -> \x00 \x00 \x00 \x00
+                              reserved (500, 1) -> \xff
+                              shadows_obj (501, 4) -> \xff \xff \xff \x00
+                              is_shrink (505, 4) -> \x00 \x00 \x00 \x00
+ result = {'file_size': 0, 'junk0': b'\x01\x00\x00\x00\x01\x00\x00\x00\xff\xff', 'name': 'test1.txt', 'junk1': 4294901760, 'yst_mode': 33188, 'yst_uid': 0, 'yst_gid': 0, 'yst_atime': 1749129940, 'yst_mtime': 1749129940, 'yst_ctime': 1749129940, 'file_size_low': 0, 'equiv_id': 4294967295, 'alias': '', 'yst_rdev': 0, 'win_ctime_1': 1749129940, 'win_ctime_2': 0, 'win_atime_1': 1749129940, 'win_atime_2': 0, 'win_mtime_1': 17491}
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+```
 
 We can see 3 parts :
 
