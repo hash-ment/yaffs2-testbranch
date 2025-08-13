@@ -343,10 +343,10 @@ contains:
 <table>
 <tbody>
 <tr class="odd">
-<td>Field</td>
-<td>Position</td>
-<td>Length</td>
-<td>Description</td>
+<td><b>Field</b></td>
+<td><b>Position</b></td>
+<td><b>Length</b></td>
+<td><b>Description</b></td>
 </tr>
 <tr class="even">
 <td>blockstate</td>
@@ -429,10 +429,10 @@ I apply these constants :
 <table>
 <tbody>
 <tr class="odd">
-<td>Field</td>
-<td>Position</td>
-<td>Length</td>
-<td>Description</td>
+<td><b>Field</b></td>
+<td><b>Position</b></td>
+<td><b>Length</b></td>
+<td><b>Description</b></td>
 </tr>
 <tr class="even">
 <td>junk0</td>
