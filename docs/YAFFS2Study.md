@@ -407,10 +407,10 @@ which equals the chunk_id with its most significant byte removed.<br />
 
 ### <span id="anchor-24"></span>****Data Part of type header****
 
-****There is no special parsing concerning that kind of Data Part, but
+There is no special parsing concerning that kind of Data Part, but
 as it can have less or egal than 2048 bytes, the real size is specified
 in the n_bytes field in the OOB Part.  
-***Example ***: if n_bytes = 5 → the data size will be 5  
+****Example:**** if n_bytes = 5 → the data size will be 5  
 « 12345 » is encoded 0x30 0x31 0x32 0x33 0x34 0x35 0x00 0x00 ….. from
 the start of the Data Part.  
 Note : this time the data are encoded in big-endian.****
