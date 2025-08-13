@@ -660,7 +660,6 @@ directory / (object_id=1).
 <p>CHUNK_ID=0</p></td>
 <td rowspan=11>Data</td>
 <td>name test1.txt ...</td>
-<td></td>
 <td rowspan=16>File « test1.txt » creation</td>
 </tr>
 <tr class="odd">
@@ -668,82 +667,50 @@ directory / (object_id=1).
 <td>0x<strong>8</strong>1a4 :<br />
 0x<strong>8</strong> → it’s a file<br />
 0x1a4 → (644)o → rw-r--r--</td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td>yst_uid \x00 \x00 \x00 \x00</td>
 <td>Uid = 0</td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td>yst_gid \x00 \x00 \x00 \x00</td>
 <td>Gid = 0</td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td>yst_atime \x3b \x12 \x37 \x68</td>
 <td>0x6837123b → (1748439611)d<br />
 28 mai 2025 15:40:11</td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td>yst_mtime \x3b \x12 \x37 \x68</td>
 <td>0x6837123b → (1748439611)d<br />
 28 mai 2025 15:40:11</td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td>yst_ctime \x3b \x12 \x37 \x68</td>
 <td>0x6837123b → (1748439611)d<br />
 28 mai 2025 15:40:11</td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td>file_size_low \x00 \x00 \x00 \x00</td>
 <td>0 byte</td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td>alias \xff ….</td>
 <td>NA</td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td>yst_rdev \x00 \x00 \x00 \x00</td>
 <td>NA</td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td>file_size_high \x00 \x00 \x00 \x00</td>
 <td>0x0000 → 0 byte</td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td rowspan=5 >OOB</td>
 <td>blockstate \xff</td>
 <td>→ Good Chunk</td>
-<td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td>sequence_number \x01 \x10 \x00 \x00</td>
