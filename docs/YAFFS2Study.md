@@ -661,6 +661,7 @@ directory / (object_id=1).
 <td rowspan=11>Data</td>
 <td>name test1.txt ...</td>
 <td rowspan=16>File « test1.txt » creation</td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>yst_mode \xa4 \x81 \x00 \x00</td>
