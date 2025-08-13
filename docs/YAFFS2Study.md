@@ -1302,12 +1302,9 @@ Furthermore, it needs to have the ability to manage :
 
 Here is the program help
 ```bash
-usage: yaffs2_parser.py \[-h\] --image IMAGE \[--obj_ids OBJ_IDS
-\[OBJ_IDS …\]\]
-
-\[--obj_id_from OBJ_ID_FROM\]
-
-\[--obj_id_to OBJ_ID_TO\]
+usage: yaffs2_parser.py \[-h\] --image IMAGE [--obj_ids OBJ_IDS [OBJ_IDS …]]
+                                             [--obj_id_from OBJ_ID_FROM]
+                                             [--obj_id_to OBJ_ID_TO]
 
 \[--snapshot SNAPSHOT\]
 
