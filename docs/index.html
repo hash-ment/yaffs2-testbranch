@@ -87,8 +87,31 @@
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css" />
+  <style>
+   .markdown-body table {
+        border-collapse: collapse;
+        display: block;
+        width: 100%;
+        overflow: auto;
+   }
+   .markdown-body table tr:nth-child(odd) {
+        background-color: #f6f8fa;
+   }
+   .markdown-body table tr:nth-child(even) {
+        background-color: #ffffff;
+   }
+   .markdown-body table th,
+   .markdown-body table td {
+        border: 1px solid #d0d7de;
+        padding: 6px 13px;
+   }
+   .markdown-body table th {
+        font-weight: 600;
+   }
+</style>
 </head>
 <body>
+<article class="markdown-body">
 <p>Forensic study of<br />
 YAFFS2 filesystem</p>
 <p>(Study)</p>
@@ -2523,5 +2546,6 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href=
 <li>the field extraction (as this)</li>
 <li>the result= → after interpretation</li>
 </ul>
+</article>
 </body>
 </html>
