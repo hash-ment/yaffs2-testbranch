@@ -269,4 +269,4 @@ Contributions are welcome!
 
 ## 🔑 Keywords
 
-yaffs2, yaffs, forensic, python, dump, recovery, flash, NAND, embedded, deleted files, partition analysis, digital forensics, orphan files, metadata, Android, challenge CTF
+yaffs2, yaffs, forensic, python, dump, recovery, flash, NAND, embedded, deleted files, partition analysis, digital forensics, orphan files, metadata, Android, CTF challenge
